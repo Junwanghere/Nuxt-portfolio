@@ -7,7 +7,14 @@
     prose-pre:text-gray-200">
     <div class="grid grid-cols-6 gap-16">
       <div :class="{'col-span-4': page?.toc, 'col-span-6' : !page?.toc}">
-        <ContentRenderer v-if="page" :value="page"></ContentRenderer>
+        <template v-if="page">
+          <ContentRenderer :value="page"/>
+        </template>
+        <template v-else>
+          <h1>查無文章</h1>
+          <p>這篇文章不存在... 看看其他文章？</p>
+        <NuxtLink to="/blog">回文章列表</NuxtLink>
+        </template>
       </div>
       <div class="col-span-2 not-prose" v-if="page?.toc">
         <aside class="sticky top-8">
@@ -32,21 +39,19 @@ const { data: page } = await useAsyncData(`${route.path}` ,() => {
 })
 
 useSeoMeta({
-  title: page.value?.title,
+  title: page.value?.title || '查無文章',
   description: page.value?.description
 })
 
 onMounted(() => {
   const callback = (entries) => {
     for( const entry of entries){
-      console.log(entry)
-      console.log(window.innerHeight)
       if(entry.isIntersecting){
         intersectElement.value = entry.target.id
       }
     }
   }
-
+  // 
   const options = {
     root: null,
     threshold: 0.5,
