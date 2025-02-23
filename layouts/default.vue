@@ -3,7 +3,7 @@
     <header class="flex justify-between items-center mt-5">
       <div class="flex items-center space-x-12">
         <div>
-          <NuxtLink to="/" class="text-xl font-semibold p-2 hover:bg-gray-200">Jun's Blog</NuxtLink>
+          <NuxtLink to="/" class="text-xl font-semibold p-2 hover:bg-gray-200 dark:hover:bg-gray-800">Jun's Blog</NuxtLink>
         </div>
         <Menu/>
       </div>
@@ -30,4 +30,6 @@
 body {
   @apply bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300
 }
+
+
 </style>

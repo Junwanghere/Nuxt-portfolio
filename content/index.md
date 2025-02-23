@@ -2,6 +2,6 @@
 
 ## I'm Jun
 
-Read More [about](/about), or see my latest [projects](/project)
+Read More [about](/about), or see my latest [projects](/projects)
 
-::blog-post
+::latest-blog-posts{:postLimit="2"}
