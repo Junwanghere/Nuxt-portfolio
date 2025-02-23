@@ -16,7 +16,6 @@ const { data: page } = await useAsyncData(() => {
   return queryCollection("content").path(route.path).first()
 })
 
-console.log(page.value.body.toc)
 
 useSeoMeta({
   title: '專案',

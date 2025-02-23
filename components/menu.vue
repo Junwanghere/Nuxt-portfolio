@@ -8,7 +8,7 @@
         <NuxtLink to="/about" class="link">關於</NuxtLink>
       </li>
       <li>
-        <NuxtLink to="/project" class="link">專案</NuxtLink>
+        <NuxtLink to="/projects" class="link">專案</NuxtLink>
       </li>
       <li>
         <NuxtLink to="/blog" class="link">部落格</NuxtLink>
